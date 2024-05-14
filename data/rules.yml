@@ -1,0 +1,26 @@
+rules:
+  - rule: end_game
+    steps:
+      - intent: deny_game
+      - action: utter_deny_game
+      - action: utter_restart
+
+  - rule: Activate form
+    steps:
+      - intent: request_description
+      - action: description_form
+      - active_loop: description_form
+
+  - rule: Submit form
+    condition:
+      - active_loop: description_form
+    steps:
+      - action: description_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: utter_submit
+      - action: utter_slots_values
+
+
+

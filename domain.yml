@@ -1,0 +1,141 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- affirm
+- show_emotions
+- feeling_good
+- feeling_sad
+- parent
+- deny_game
+
+forms:
+  description_form:
+    required_slots:
+      - first_description
+      - second_description
+      - third_description
+      - fourth_description
+      - fifth_description
+      - sixth_description
+
+slots:
+  first_description:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: first_description
+
+  second_description:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: second_description
+
+  third_description:
+     type: text
+     influence_conversation: true
+     mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: third_description
+
+  fourth_description:
+     type: text
+     influence_conversation: true
+     mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: fourth_description
+
+  fifth_description:
+     type: text
+     influence_conversation: true
+     mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: fifth_description
+
+  sixth_description:
+     type: text
+     influence_conversation: true
+     mappings:
+      - type: from_text
+        conditions:
+         - active_loop: description_form
+           requested_slot: sixth_description
+
+responses:
+  utter_greet:
+  - text: Hello, Friend! It's great to see you. How's your day going?
+  utter_feeling_good:
+    - text: Awesome! Keep up the good mood!
+  utter_feeling_sad:
+    - text: I'm sorry to hear that you're feeling down.
+  utter_Things_today:
+   - text: It's great to hear about your day! You did so many things!
+   - text: Sounds like you had a wonderful time! Keep exploring and having fun!
+  utter_propose_game:
+  - text: I know a game that we can play together and have fun, do you want to play?
+  utter_deny_game:
+    - text: Its ok champ!! it seems like you are not a great mood to play the game, will meet you next time.Take care
+  utter_restart:
+    - text: to restart the conversation please type "start".
+  utter_goodbye:
+  - text: Bye
+
+  utter_ask_first_description:
+  - text: Yay! Let's do it! Here's the first picture. What do you think about this picture?
+    image: https://i.imgur.com/EkLBFrM.jpg
+  utter_ask_second_description:
+  - text: Keep going! What else do you see?
+  utter_ask_third_description:
+  - text: Buddy, how does this picture make you feel in your thoughts?
+
+  utter_ask_fourth_description:
+  - text: Here is another picture, what do you think about this picture?
+    image: https://i.imgur.com/YD1UP6N.jpg
+  utter_ask_fifth_description:
+  - text: Please, Keep going! What else do you see?
+  utter_ask_sixth_description:
+  - text: Buddy, what idea did you get from this picture.
+  utter_submit:
+  - text: Thank you for sharing your thoughts my friend! It was fun playing this game with you.
+  - text: Thank you for sharing your thoughts, buddy! Playing this game with you was so much fun. Your ideas made it super exciting!
+  - text: Thanks for joining in and sharing your ideas, champ! Playing this game with you was a blast. Your input made it even better!
+  - text:  Big thanks for being part of the game, kiddo! Your thoughts really made it special. Let's play again soon!
+  - text: Thanks a bunch for playing and sharing, pal! Your ideas were awesome. You're a great teammate!
+  - text: Wow, thanks a bunch for playing along, buddy! Your ideas made the game extra fun. You're a superstar!
+  utter_parent:
+    - text: "I've stored your child's responses. Shall I also show their emotions?"
+    - text: "Your child's responses are saved. Do you want me to display their emotions?"
+    - text: "The responses from your child are logged. Would you like me to include their emotions?"
+    - text: "Your child's answers have been recorded. Should I add their emotions too?"
+    - text: "Your child's input has been saved. Would you like to see their emotions as well?"
+    - text: "I've noted your child's responses. Do you wish to view their emotions alongside?"
+    - text: "The responses from your child have been logged. Shall I capture their emotions too?"
+    - text: "Your child's answers are saved. Do you want me to capture and display their emotions?"
+    - text: "Your child's input has been noted. Shall I also record their emotions for you?"
+    - text: "Your child's responses are stored. Should I include their emotions in the display?"
+  utter_slots_values:
+  - text: I will remember that your responses.
+
+actions:
+- utter_greet
+- utter_slots_values
+- utter_submit
+- action_analyze_sentiment
+- action_reset_slots
+- utter_parent

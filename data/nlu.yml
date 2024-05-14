@@ -1,0 +1,129 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - good morning
+    - good evening
+    - good afternoon
+    - /start 
+
+- intent: feeling_good
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - I'm feeling great!
+    - I'm happy today!
+    - I feel awesome!
+    - I'm excited!
+    - I'm feeling really good!
+    - I'm fantastic!
+    - I'm on top of the world!
+    - I'm in a good mood!
+    - I'm full of energy!
+    - I'm thrilled!
+    - I'm okay.
+    - I'm fine.
+    - I'm alright.
+
+- intent: feeling_sad
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremely sad
+    - so saad
+    - so sad
+    - I feel okay, I guess.
+    - Not bad.
+    - I'm so-so.
+    - I'm just chilling.
+    - I'm hanging in there.
+    - I'm doing alright.
+    - It's been an okay day.
+    - I'm feeling down.
+    - I'm sad.
+    - I'm not feeling great.
+    - I'm a bit upset.
+    - I'm feeling low.
+    - I'm disappointed.
+    - I'm feeling blue.
+    - I'm not in the best mood.
+    - I'm feeling stressed out.
+    - I'm anxious.
+    - I'm worried.
+    - I'm feeling frustrated.
+    - I'm angry.
+    - I'm irritated.
+    - I'm feeling tired.
+    - I'm exhausted.
+    - I'm feeling drained.
+    - I'm sleepy.
+    - I'm feeling bored.
+    - I'm not really feeling anything.
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - show emotions on my saved responses
+    - display sentiment analysis
+    - analyze sentiments
+    - emotions of my responses
+    - check sentiments
+
+
+- intent: deny_game
+  examples: |
+    - no
+    - i dont want to play
+    - iam not interested in the game
+    - some other time
+    - right now iam not willing to play
+    - sorry not at the moment
+
+- intent: parent
+  examples: |
+    - parents here
+    - can I know the responses result
+    - i am the parent of child who gave responses
+    - I'm the parent of the child who gave responses
+    - I'm the mom of the child who answered
+    - I'm the dad of the child who responded
+    - I'm the parent of the child who participated
+    - I'm the guardian of the child who participated
+    - I'm the legal guardian of the child who participated
+

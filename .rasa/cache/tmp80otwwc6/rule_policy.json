@@ -1,0 +1,32 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_description\"}}]": "description_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_description\"}}, {\"active_loop\": {\"name\": \"description_form\"}, \"prev_action\": {\"action_name\": \"description_form\"}, \"user\": {\"intent\": \"request_description\"}}]": "action_listen",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"description_form\"}}]": "utter_submit",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"description_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}]": "utter_slots_values",
+      "[{\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"description_form\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_submit\"}}, {\"active_loop\": {\"name\": \"should_not_be_set\"}, \"prev_action\": {\"action_name\": \"utter_slots_values\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}]": "action_analyze_sentiment",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"show_emotions\"}}]": "action_reset_slots",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slots\"}, \"user\": {\"intent\": \"show_emotions\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "description_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"description_form\"}, \"prev_action\": {\"action_name\": \"description_form\"}, \"user\": {\"intent\": \"request_description\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - description_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_reset_slots\"}, \"user\": {\"intent\": \"show_emotions\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}]",
+      "handling active loops and forms - description_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"show_emotions\"}}, {\"prev_action\": {\"action_name\": \"action_analyze_sentiment\"}, \"user\": {\"intent\": \"show_emotions\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"request_description\"}}]",
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back"
+    ]
+  }
+}

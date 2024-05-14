@@ -1,0 +1,67 @@
+version: "2.0"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: good_path
+  steps:
+  - action: utter_greet
+  - intent: feeling_good
+  - action: utter_feeling_good
+  - action: utter_propose_game
+
+- story: sad_path
+  steps:
+  - action: utter_greet
+  - intent: feeling_sad
+  - action: utter_feeling_sad
+  - action: utter_propose_game
+
+- story: game_path
+  steps:
+  - action: utter_propose_game
+  - intent: affirm
+  - action: description_form
+  - active_loop: description_form
+  - slot_was_set:
+    - requested_slot: first_description
+  - slot_was_set:
+    - first_description: vincent
+  - slot_was_set:
+    - requested_slot: second_description
+  - slot_was_set:
+    - second_description: vincent-mcvincent
+  - slot_was_set:
+    - requested_slot: third_description
+  - slot_was_set:
+    - third_description: vincent-mcvincent
+  - slot_was_set:
+    - requested_slot: fourth_description
+  - slot_was_set:
+    - fourth_description: vincent
+  - slot_was_set:
+    - requested_slot: fifth_description
+  - slot_was_set:
+    - fifth_description: vincent-mcvincent
+  - slot_was_set:
+    - requested_slot: sixth_description
+  - slot_was_set:
+    - sixth_description: vincent-mcvincent
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_slots_values
+
+
+- story: Show emotions on saved responses
+  steps:
+   - intent: parent
+   - action: utter_parent
+   - intent: affirm
+   - action: action_analyze_sentiment
+   - action: action_reset_slots
